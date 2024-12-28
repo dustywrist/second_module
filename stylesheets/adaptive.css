@@ -1,0 +1,18 @@
+@media screen and (max-device-width: 1024px) {
+	.second_block {
+		grid-template-columns: 1fr;
+	}
+	.forth_block {
+		grid-template-columns: 1fr;
+	}
+	.face_illusion {
+		width: 100vw;
+		height: 100vw;
+	}
+}
+
+@media screen and (max-device-width: 414px) {
+	.footer__info {
+		font-size: 14px;
+	}
+}

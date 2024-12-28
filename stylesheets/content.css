@@ -1,0 +1,665 @@
+@font-face {
+	font-family: 'Involve';
+	src: url('../fonts/Involve-Regular.ttf') format('truetype');
+	font-style: Light;
+	font-weight: Light;
+}
+
+@font-face {
+	font-family: 'Serifqo 4F';
+	src: url('../fonts/Serifiqo\ 4F\ Free\ Capitals.otf') format('truetype');
+	font-style: Light;
+	font-weight: Light;
+}
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	min-height: 100%;
+}
+
+body {
+	max-width: 1920px;
+	background-color: #f8f8ff;
+	display: block;
+	margin: 0 auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.first_block {
+	width: 100vw;
+	position: relative;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: calc((1800 / 1920) * 100%);
+	padding-top: 1%;
+	padding-bottom: 3%;
+}
+.title {
+	width: 100%;
+}
+
+.logo_header {
+	position: absolute;
+	width: 60%;
+	left: 25%;
+	top: 8%;
+}
+
+.position_for_subheaders {
+	width: 100vw;
+	position: absolute;
+	top: 5%;
+	left: 20%;
+}
+
+.fly_typography_header {
+	position: relative;
+	top: 6%;
+	width: 67%;
+}
+
+.fly_typography_header:nth-of-type(2) {
+	animation: fly1 10s infinite linear;
+}
+
+.fly_typography_header:nth-of-type(3) {
+	width: 63%;
+	animation: fly2 10s infinite linear;
+}
+
+.fly_typography_header:nth-of-type(4) {
+	animation: fly3 10s infinite linear;
+}
+
+@keyframes fly1 {
+	0% {
+		transform: translate(-30%);
+	}
+	50% {
+		transform: translate(80%);
+	}
+	100% {
+		transform: translate(10%);
+	}
+}
+
+@keyframes fly2 {
+	0% {
+		transform: translate(40%);
+	}
+	50% {
+		transform: translate(80%);
+	}
+	100% {
+		transform: translate(-30%);
+	}
+}
+
+@keyframes fly3 {
+	0% {
+		transform: translate(-20%);
+	}
+	50% {
+		transform: translate(80%);
+	}
+	100% {
+		transform: translate(20%);
+	}
+}
+
+.second_block {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.medicaments_and_typography {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	overflow: hidden;
+}
+
+.only_medicaments {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+.pills {
+	width: 1000%;
+}
+
+.medicaments_1 {
+	width: 100%;
+	display: flex;
+	animation: medicaments_1 16s linear infinite;
+}
+
+@keyframes medicaments_1 {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-800%);
+	}
+}
+
+.pill_container_1:hover .medicaments_1 {
+	animation-play-state: paused;
+}
+
+.medicaments_2 {
+	width: 100%;
+	position: relative;
+	left: -800%;
+	display: flex;
+	animation: scroll_pill_2 16s linear infinite;
+}
+
+@keyframes scroll_pill_2 {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(800%);
+	}
+}
+
+.pill_container_2:hover .medicaments_2 {
+	animation-play-state: paused;
+}
+
+.medicaments_3 {
+	width: 100%;
+	display: flex;
+	animation: scroll_pill_3 16s linear infinite;
+}
+
+@keyframes scroll_pill_3 {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-800%);
+	}
+}
+
+.pill_container_3:hover .medicaments_3 {
+	animation-play-state: paused;
+}
+
+.first_typography {
+	position: relative;
+	overflow: hidden;
+	align-content: center;
+}
+
+.first_typography {
+	position: relative;
+	overflow: hidden;
+	align-content: center;
+}
+.reality_wrapper {
+	display: flex;
+}
+.reality_typography {
+	width: 300%;
+	display: flex;
+	animation: reality_typography_animation 2s linear infinite;
+}
+
+@keyframes reality_typography_animation {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+/* Контейнер первого текста */
+.first_typography {
+	position: relative;
+	display: inline-block;
+	overflow: hidden; /* Чтобы ничего не выходило за пределы */
+}
+
+/* .simulation_animation {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+} */
+
+.simulation_typography {
+	position: absolute;
+
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 8vw;
+	z-index: 2;
+
+	font-family: 'Involve';
+	color: #262696;
+
+	opacity: 0; /* Скрыто по умолчанию */
+	transition: opacity 1s ease-in-out;
+}
+.main_text {
+	z-index: 200;
+	transition: opacity 1s ease-in-out;
+}
+/* Размытая белая плашка */
+.blurred_background {
+	position: absolute;
+	z-index: -100;
+	top: 150px;
+	left: 10px;
+	right: 10px;
+	bottom: 150px;
+	background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон */
+	backdrop-filter: blur(10px); /* Эффект размытия */
+	filter: blur(10px); /* Для поддержки в старых браузерах */
+	border-radius: 10px; /* Скругленные края */
+}
+
+.duplicate_text {
+	z-index: -100;
+	position: absolute;
+	font-family: 'Involve';
+	font-size: 8vw;
+	color: #262696;
+	opacity: 0;
+	transition: opacity 5s ease-in-out, transform 2s ease-in-out;
+}
+
+.duplicate_text.up {
+	top: -5%; /* Начальная позиция выше */
+}
+
+.duplicate_text.down {
+	bottom: -5%; /* Начальная позиция ниже */
+}
+
+/* При наведении на .first_typography */
+.first_typography:hover .simulation_typography {
+	opacity: 1;
+}
+
+.first_typography:hover .duplicate_text.up {
+	opacity: 1;
+	animation: up 5s infinite linear;
+}
+
+@keyframes up {
+	0% {
+		transform: translateY(-5%);
+	}
+	100% {
+		transform: translateY(100%);
+	}
+}
+
+.first_typography:hover .duplicate_text.down {
+	opacity: 1;
+	transform: translateY(-100%);
+}
+
+.face_illusion {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	position: relative;
+	width: 50vw;
+	height: 50vw;
+	overflow: hidden; /* Обрезка изображений при увеличении */
+}
+
+.face_block {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden; /* Обрезает изображение, которое выходит за пределы блока */
+}
+
+.part_of_illusion {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease, z-index 0s 0.5s;
+	transform-origin: center; /* Изначальная точка трансформации */
+}
+
+.face_illusion:hover .part_of_illusion {
+	z-index: 1;
+	transform: scale(3);
+}
+
+/* Указываем точки трансформации для разных элементов */
+.face_block:nth-child(1) .part_of_illusion {
+	transform-origin: top left;
+}
+
+.face_block:nth-child(2) .part_of_illusion {
+	transform-origin: top center;
+}
+
+.face_block:nth-child(3) .part_of_illusion {
+	transform-origin: top right;
+}
+
+.face_block:nth-child(4) .part_of_illusion {
+	transform-origin: center left;
+}
+
+.face_block:nth-child(5) .part_of_illusion {
+	transform-origin: center;
+}
+
+.face_block:nth-child(6) .part_of_illusion {
+	transform-origin: center right;
+}
+
+.face_block:nth-child(7) .part_of_illusion {
+	transform-origin: bottom left;
+}
+
+.face_block:nth-child(8) .part_of_illusion {
+	transform-origin: bottom center;
+}
+
+.face_block:nth-child(9) .part_of_illusion {
+	transform-origin: bottom right;
+}
+
+.third_block {
+	overflow: hidden;
+}
+
+.medcases {
+	overflow: hidden;
+	width: 600%;
+	position: relative;
+	left: -500%;
+	padding-left: 1%;
+	padding-right: 1%;
+	animation: scroll_medcase 9s linear infinite;
+}
+
+.resina_medcase {
+	width: 100%;
+	overflow: hidden;
+}
+
+@keyframes scroll_medcase {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(75%);
+	}
+}
+
+.third_block:hover .medcases {
+	animation-play-state: paused;
+}
+
+.forth_block {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.pop_medicine {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	place-items: center;
+}
+
+.glisters {
+	padding: 5%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.stamp_and_fallen_block {
+	position: relative;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	overflow: hidden;
+}
+
+.fall_word {
+	width: 100%;
+}
+
+.fallen_blocks {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+	flex-direction: column;
+}
+
+.fallen_block_1_4 {
+	position: absolute;
+	width: 50%;
+	animation: fall1 2s infinite linear,
+		rotate1 3s 0s normal none infinite running linear;
+}
+.fallen_block_2_4 {
+	position: absolute;
+	width: 50%;
+	animation: fall2 2s infinite linear,
+		rotate2 3s 0s normal none infinite running linear;
+	animation-delay: 0.5s;
+}
+.fallen_block_3_4 {
+	position: absolute;
+	width: 50%;
+	animation: fall3 2s infinite linear,
+		rotate3 3s 0s normal none infinite running linear;
+	animation-delay: 1s;
+}
+.fallen_block_4_4 {
+	position: absolute;
+	width: 50%;
+	animation: fall4 2s infinite linear,
+		rotate3 3s 0s normal none infinite running linear;
+	animation-delay: 1.5s;
+}
+
+@keyframes fall1 {
+	0% {
+		top: -100px;
+		left: 10%;
+	}
+	100% {
+		top: 100%;
+		left: 10%;
+	}
+}
+@keyframes fall2 {
+	0% {
+		top: -100px;
+		left: 60%;
+	}
+	100% {
+		top: 100%;
+		left: 60%;
+	}
+}
+
+@keyframes fall3 {
+	0% {
+		top: -100px;
+		left: 30%;
+	}
+	100% {
+		top: 100%;
+		left: 30%;
+	}
+}
+
+@keyframes fall4 {
+	0% {
+		top: -100px;
+		left: 50%;
+	}
+	100% {
+		top: 100%;
+		left: 50%;
+	}
+}
+
+@keyframes rotate1 {
+	0% {
+		transform: rotate(30deg);
+	}
+	25% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(15deg);
+	}
+	75% {
+		transform: rotate(30deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes rotate2 {
+	0% {
+		transform: rotate(30deg);
+	}
+	25% {
+		transform: rotate(15deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(-15deg);
+	}
+	100% {
+		transform: rotate(-30deg);
+	}
+}
+
+@keyframes rotate3 {
+	0% {
+		transform: rotate(-0deg);
+	}
+	25% {
+		transform: rotate(-20deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(20deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+.stamp {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	z-index: -4;
+}
+
+.resina_stamp_1_4 {
+	width: 100%;
+	position: absolute;
+	opacity: 0;
+	animation: fadeInOut 8s infinite;
+}
+
+.resina_stamp_2_4,
+.resina_stamp_3_4,
+.resina_stamp_4_4 {
+	width: 100%;
+	left: 0%;
+	position: absolute;
+	opacity: 0;
+	animation: fadeInOut 8s infinite;
+}
+
+@keyframes fadeInOut {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.resina_stamp_1_4 {
+	animation-delay: 0s;
+}
+
+.resina_stamp_2_4 {
+	animation-delay: 2s;
+}
+
+.resina_stamp_3_4 {
+	animation-delay: 4s;
+}
+
+.resina_stamp_4_4 {
+	animation-delay: 6s;
+}
+
+.fifth_block {
+	position: relative;
+}
+
+.futer {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 1%;
+	width: 100%;
+	color: #f8f8ff;
+	font-family: Involve;
+	font-size: clamp(10px, 2vw, 40px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 100%;
+	background-color: #262696;
+}
+
+.footer_curator {
+	text-align: right;
+}
+
+.footer_groupe {
+	text-align: center;
+}
